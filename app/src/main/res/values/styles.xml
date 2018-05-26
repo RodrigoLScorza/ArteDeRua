@@ -6,6 +6,9 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/colorPrimaryDark</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -13,8 +16,22 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="bt">
+        <item name="android:background">@drawable/bt_style</item>
+    </style>
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="btLogin" parent="bt">
+        <item name="android:layout_width">@dimen/btWidthLogin</item>
+        <item name="android:layout_height">@dimen/btHeightLogin</item>
+        <item name="android:layout_marginEnd">@dimen/basic8</item>
+        <item name="android:layout_marginLeft">@dimen/basic8</item>
+        <item name="android:layout_marginRight">@dimen/basic8</item>
+        <item name="android:layout_marginStart">@dimen/basic8</item>
+        <item name="android:layout_marginTop">@dimen/basic32</item>
+        <item name="android:textSize">@dimen/btLoginTextSize</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
 </resources>

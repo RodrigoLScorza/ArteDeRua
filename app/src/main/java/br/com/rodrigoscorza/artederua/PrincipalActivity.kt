@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
+import br.com.rodrigoscorza.artederua.ui.LoginOuCadastroActivity
 import com.facebook.login.LoginManager
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_principal.*
@@ -41,5 +42,6 @@ class PrincipalActivity : AppCompatActivity() {
         FirebaseAuth.getInstance().signOut()
         LoginManager.getInstance().logOut()
         startActivity(Intent(this@PrincipalActivity, LoginOuCadastroActivity::class.java))
+        finish()
     }
 }

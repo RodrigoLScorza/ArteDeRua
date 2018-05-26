@@ -16,4 +16,16 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="usuarioNaoLocalizado">Usuário não lozalizado!</string>
+    <string name="nome">Nome</string>
+    <string name="csenha">Confirme a Senha</string>
+    <string name="cadastrarUser">Cadastrar Agora!</string>
+    <string name="jaSouCadastrado">Já sou Cadastrado...</string>
+    <string name="camposVazio">Campo vazio verifique!</string>
+    <string name="passwordVazio">Senha não foi preenchida!</string>
+    <string name="emailVazio">Email não preenchido</string>
+    <string name="nomeVazio">Seu nome está vazio!</string>
+    <string name="emailInvalido">Email invalido!</string>
+    <string name="senhaInvalida">Senhas diferentes!</string>
+    <string name="bemVindo">Seja bem vindo</string>
 </resources>

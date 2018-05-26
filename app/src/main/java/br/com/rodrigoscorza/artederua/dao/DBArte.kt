@@ -1,9 +1,8 @@
 package br.com.rodrigoscorza.artederua.dao
 
-import android.arch.persistence.db.SupportSQLiteOpenHelper
 import android.arch.persistence.room.*
 import android.content.Context
-import br.com.rodrigoscorza.artederua.model.Arte
+import br.com.rodrigoscorza.artederua.entities.Arte
 
 @Database(entities = arrayOf(Arte::class), version = 1)
 abstract class DBArte : RoomDatabase() {

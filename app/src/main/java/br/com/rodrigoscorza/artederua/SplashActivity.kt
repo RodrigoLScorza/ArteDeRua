@@ -3,6 +3,7 @@ package br.com.rodrigoscorza.artederua
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import br.com.rodrigoscorza.artederua.ui.LoginOuCadastroActivity
 
 class SplashActivity : AppCompatActivity() {
 

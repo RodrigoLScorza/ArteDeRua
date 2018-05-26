@@ -39,7 +39,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginOuCadastroActivity" />
+        <activity android:name=".ui.LoginOuCadastroActivity"/>
         <activity
             android:name=".PrincipalActivity"
             android:label="@string/title_activity_principal"></activity>

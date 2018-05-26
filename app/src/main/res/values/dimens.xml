@@ -10,4 +10,15 @@
     <dimen name="border">2dp</dimen>
     <dimen name="bottomandtop">20dp</dimen>
 
+    <dimen name="basic8">8dp</dimen>
+    <dimen name="basic16">16dp</dimen>
+    <dimen name="basic24">24dp</dimen>
+    <dimen name="basic32">32dp</dimen>
+
+
+    <dimen name="btHeightLogin">30dp</dimen>
+    <dimen name="btWidthLogin">0dp</dimen>
+    <dimen name="marginTopBtLogin">32dp</dimen>
+    <dimen name="btLoginTextSize">10sp</dimen>
+
 </resources>

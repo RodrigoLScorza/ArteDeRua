@@ -1,4 +1,4 @@
-package br.com.rodrigoscorza.artederua.model
+package br.com.rodrigoscorza.artederua.entities
 
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey

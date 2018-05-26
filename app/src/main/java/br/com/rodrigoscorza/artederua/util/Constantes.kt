@@ -1,4 +1,4 @@
-package br.com.rodrigoscorza.artederua
+package br.com.rodrigoscorza.artederua.util
 
 class Constantes{
 
