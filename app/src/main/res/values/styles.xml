@@ -20,7 +20,19 @@
         <item name="android:background">@drawable/bt_style</item>
     </style>
 
+    <style name="edt">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
+    <style name="myRating" parent="Widget.AppCompat.RatingBar.Indicator">
+        <item name="android:progressDrawable">@drawable/custom_ratingbar</item>
+        <item name="android:numStars">5</item>
+        <item name="android:stepSize">0.5</item>
+        <item name="android:max">10</item>
+        <item name="android:min">1</item>
+    </style>
 
     <style name="btLogin" parent="bt">
         <item name="android:layout_width">@dimen/btWidthLogin</item>

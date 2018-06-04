@@ -10,14 +10,16 @@ abstract class DBArte : RoomDatabase() {
     abstract fun arteDao(): ArteDao
 
     companion object {
-        val arteDB: String = "ArteDB"
 
         var instance: DBArte? = null
 
         fun getDB(context: Context): DBArte? {
 
             if(instance == null){
-                instance = Room.databaseBuilder(context.applicationContext, DBArte::class.java, arteDB).build()
+                instance = Room.databaseBuilder(context.applicationContext,
+                        DBArte::class.java,
+                        "artedb")
+                        .build()
             }
             return instance
         }

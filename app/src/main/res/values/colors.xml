@@ -6,4 +6,6 @@
     <color name="white">#CCffffff</color>
     <color name="amarelo">#ffef00</color>
     <color name="amarelo_e">#ffe005</color>
+    <color name="cinza">#ffEEEEEE</color>
+    <color name="preto">#000000</color>
 </resources>

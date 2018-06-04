@@ -1,4 +1,4 @@
-package br.com.rodrigoscorza.artederua.ui
+package br.com.rodrigoscorza.artederua.ui.viewmodel
 
 import android.arch.lifecycle.ViewModel
 

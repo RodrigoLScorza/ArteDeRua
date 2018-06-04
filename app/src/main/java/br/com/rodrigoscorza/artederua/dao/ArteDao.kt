@@ -1,13 +1,12 @@
 package br.com.rodrigoscorza.artederua.dao
 
 import android.arch.lifecycle.LiveData
-import android.arch.persistence.room.Delete
-import android.arch.persistence.room.Insert
-import android.arch.persistence.room.Query
-import android.arch.persistence.room.Update
+import android.arch.persistence.room.*
 import br.com.rodrigoscorza.artederua.entities.Arte
 
+@Dao
 interface ArteDao {
+
 
 
     @Insert

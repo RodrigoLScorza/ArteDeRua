@@ -1,4 +1,4 @@
-package br.com.rodrigoscorza.artederua.ui
+package br.com.rodrigoscorza.artederua.ui.fragments
 
 
 import android.arch.lifecycle.ViewModelProviders
@@ -11,6 +11,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import br.com.rodrigoscorza.artederua.R
+import br.com.rodrigoscorza.artederua.ui.viewmodel.CadastroFragmentViewModel
+import br.com.rodrigoscorza.artederua.ui.LoginOuCadastroActivity
+import br.com.rodrigoscorza.artederua.util.TypeFace
 import br.com.rodrigoscorza.artederua.util.validEmail
 import br.com.rodrigoscorza.artederua.util.value
 import kotlinx.android.synthetic.main.fragment_cadastro.*
@@ -37,6 +40,11 @@ class CadastroFragment : Fragment(), TextWatcher {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         input_nome.requestFocus()
+
+//        input_nome.TypeFace(context!!)
+ //       input_email.TypeFace(context!!)
+  //      input_password.TypeFace(context!!)
+   //     input_senhaC.TypeFace(context!!)
 
         btCadastrar.setOnClickListener {
             if (validaCampo(input_nome, R.string.nomeVazio) && validaCampo(input_email, R.string.emailVazio) &&

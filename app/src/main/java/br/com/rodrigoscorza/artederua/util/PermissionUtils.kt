@@ -1,4 +1,4 @@
-package br.com.rodrigoscorza.artederua
+package br.com.rodrigoscorza.artederua.util
 
 import android.app.Activity
 import android.content.pm.PackageManager

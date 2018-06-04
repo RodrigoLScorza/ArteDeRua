@@ -1,7 +1,8 @@
-package br.com.rodrigoscorza.artederua.ui
+package br.com.rodrigoscorza.artederua.ui.viewmodel
 
 import android.arch.lifecycle.ViewModel
 import android.support.v4.app.Fragment
+import br.com.rodrigoscorza.artederua.ui.fragments.LoginFragment
 
 class LoginOuCadastroActivityViewModel : ViewModel() {
 
