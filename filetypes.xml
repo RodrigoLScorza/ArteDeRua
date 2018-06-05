@@ -1,8 +1,0 @@
-<application>
-  <component name="FileTypeManager" version="17">
-    <extensionMap>
-      <mapping pattern="tb_inventario" type="SQL" />
-      <mapping pattern="tabelas" type="SQL" />
-    </extensionMap>
-  </component>
-</application>
