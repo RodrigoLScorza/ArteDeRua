@@ -4,6 +4,7 @@ package br.com.rodrigoscorza.artederua.ui.fragments
 import android.annotation.SuppressLint
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -18,8 +19,10 @@ import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.api.GoogleApiClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.*
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.orhanobut.hawk.Hawk
 
 
 class MFragment : Fragment(), OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
@@ -111,8 +114,17 @@ class MFragment : Fragment(), OnMapReadyCallback, GoogleApiClient.ConnectionCall
             val updateCam = CameraUpdateFactory.newLatLngZoom(Constantes.latLng, 15f)
             mMap?.animateCamera(updateCam)
             pegaDados()
+            marcaNovaArteEnviada()
         }
 
+    }
+
+    private fun marcaNovaArteEnviada() {
+        Hawk.init(context!!).build()
+        if (Hawk.contains("latitude") && Hawk.contains("longitude")) {
+            mMap.addMarker(MarkerOptions().position(LatLng(Hawk.get("latitude"), Hawk.get("longitude"))).title(resources.getString(R.string.novaArteLocalizada)).snippet(
+                    "${activity?.resources?.getString(R.string.nota)} ${4.5}").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_star_complete)))
+        }
     }
 
     private fun pegaDados() {
@@ -121,10 +133,11 @@ class MFragment : Fragment(), OnMapReadyCallback, GoogleApiClient.ConnectionCall
                 .artes
                 .observe(this@MFragment, Observer<MutableList<Arte>> {
                     it?.forEach {
-                        mMap.addMarker(MarkerOptions().position(LatLng(it.latitude, it.longitude)).title(it.nome).
-                                snippet("${activity?.resources?.getString(R.string.nota)} ${it.nota}"))
+                        mMap.addMarker(MarkerOptions().position(LatLng(it.latitude, it.longitude)).title(it.nome).snippet("${activity?.resources?.getString(R.string.nota)} ${it.nota}"))
                     }
                 })
+
+
     }
 
 }

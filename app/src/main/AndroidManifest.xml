@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.rodrigoscorza.artederua">
 
@@ -50,7 +51,6 @@
             android:name=".ui.PrincipalActivity"
             android:label="@string/title_activity_principal"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".ui.ArteActivity"
             android:screenOrientation="portrait" />
@@ -65,5 +65,19 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
+
+        <service android:name=".util.messagingfirebase.NotificationFire">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".util.messagingfirebase.NotificationMessagingFire">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
     </application>
+
 </manifest>
