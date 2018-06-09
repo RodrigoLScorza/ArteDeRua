@@ -50,7 +50,7 @@ class ArteActivity : AppCompatActivity() {
                         Manifest.permission.CAMERA)
 
                 if (ok) {
-                    magicalCamera = MagicalCamera(this@ArteActivity, 30, MagicalPermissions(
+                    magicalCamera = MagicalCamera(this@ArteActivity, 20, MagicalPermissions(
                             this@ArteActivity, arrayOf(
                             Manifest.permission.CAMERA
                     )))
