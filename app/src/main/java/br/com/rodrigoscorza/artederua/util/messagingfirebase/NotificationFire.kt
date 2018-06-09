@@ -12,9 +12,6 @@ class NotificationFire : FirebaseInstanceIdService() {
     val TOKEN = "token"
 
 
-    init {
-        Hawk.init(this@NotificationFire).build()
-    }
 
     override fun onTokenRefresh() {
         super.onTokenRefresh()
@@ -25,6 +22,7 @@ class NotificationFire : FirebaseInstanceIdService() {
         // If you want to send messages to this application instance or
         // manage this apps subscriptions on the server side, send the
         // Instance ID token to your app server.
+        Hawk.init(this.applicationContext).build()
         Hawk.put(TOKEN, refreshedToken)
     }
 }

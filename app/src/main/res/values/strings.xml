@@ -45,4 +45,7 @@
     <string name="edit">Editar</string>
     <string name="compartilharImagem">Compartilhar Imagem</string>
     <string name="novaArteLocalizada">Nova Arte localizada!</string>
+    <string name="information">Informaçāo</string>
+    <string name="desenvolvedor">Desenvolvido por Rodrigo Scorza</string>
+    <string name="version">Versāo 1.0.0</string>
 </resources>

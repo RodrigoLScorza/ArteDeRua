@@ -7,9 +7,11 @@ import br.com.rodrigoscorza.artederua.ui.fragments.LoginFragment
 class LoginOuCadastroActivityViewModel : ViewModel() {
 
     var fragmentAtual: Fragment
+    var dialogInfo: Boolean
 
     init {
         fragmentAtual = LoginFragment()
+        dialogInfo = false
     }
 
     fun setFragment(fragment: Fragment){

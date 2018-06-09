@@ -6,9 +6,13 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.Toolbar
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import br.com.rodrigoscorza.artederua.util.PermissionUtils
 import br.com.rodrigoscorza.artederua.R
+import br.com.rodrigoscorza.artederua.ui.dialog.DialogInfo
 import br.com.rodrigoscorza.artederua.ui.viewmodel.LoginOuCadastroActivityViewModel
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
@@ -19,12 +23,12 @@ import com.facebook.login.LoginResult
 import com.facebook.login.widget.LoginButton
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
-import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.orhanobut.hawk.Hawk
 import com.google.firebase.auth.UserProfileChangeRequest
+import kotlinx.android.synthetic.main.activity_login.*
 
 
 class LoginOuCadastroActivity : AppCompatActivity(), OnCompleteListener<AuthResult> {
@@ -41,9 +45,13 @@ class LoginOuCadastroActivity : AppCompatActivity(), OnCompleteListener<AuthResu
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        var bar = includeToolbar as Toolbar
+        setSupportActionBar(bar)
+
+
         PermissionUtils.validate(this@LoginOuCadastroActivity, 1, Manifest.permission.ACCESS_COARSE_LOCATION,
                 Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                Manifest.permission.CAMERA)
+                Manifest.permission.CAMERA, Manifest.permission.CALL_PHONE)
 
         //FirebaseApp.initializeApp(baseContext)
         viewModel = ViewModelProviders.of(this@LoginOuCadastroActivity).get(LoginOuCadastroActivityViewModel::class.java)
@@ -56,6 +64,27 @@ class LoginOuCadastroActivity : AppCompatActivity(), OnCompleteListener<AuthResu
         AppEventsLogger.activateApp(this@LoginOuCadastroActivity)
 
 
+    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle item selection
+        when (item.getItemId()) {
+            R.id.info -> {
+                chamaDialog()
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun chamaDialog() {
+        DialogInfo(this@LoginOuCadastroActivity, viewModel).show()
     }
 
 
@@ -128,6 +157,9 @@ class LoginOuCadastroActivity : AppCompatActivity(), OnCompleteListener<AuthResu
 
         changeFragment(viewModel.fragmentAtual)
 
+        if(viewModel.dialogInfo == true){
+            chamaDialog()
+        }
 
     }
 
